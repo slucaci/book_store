@@ -6,8 +6,8 @@ body {
   background: url("/media/background.webp") no-repeat center center fixed;
   background-size: cover;
   height: calc(100vh - 164px);
-  color: #333;
-  font-family: "Roboto", sans-serif;
+  color: #2c3e50;
+  font-family: "Poppins", sans-serif;
 }
 
 /* from Bulma */
@@ -31,7 +31,7 @@ body {
 }
 
 .shop-now-button {
-  background: #007bff;
+  background: #e74c3c;
   color: white;
   min-width: 260px;
   border-radius: 5px;
@@ -39,7 +39,7 @@ body {
 }
 
 .btn-black {
-  background: #6c757d;
+  background: #e74c3c;
   color: white;
   border-radius: 5px;
 }
@@ -50,23 +50,31 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-  background: #0056b3;
+  background: #c0392b;
   color: white;
 }
 
 .text-black {
-  color: #2c3e50 !important;
+  color: #34495e !important;
 }
 
 .border-black {
-  border: 2px solid #2c3e50 !important;
+  border: 1px solid #e74c3c !important;
 }
 
 .bg-black {
-  background: white !important;
+  background: #ecf0f1 !important;
 }
 
-/* -------------------------------- Media Queries */
+.overlay {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: rgba(44, 62, 80, 0.7);
+  z-index: -1;
+}
 
 @media (min-width: 1200px) {
   .container {
@@ -84,6 +92,6 @@ body {
   }
 
   .header-container {
-    padding-top: 164px;
+    padding-top: 200px;
   }
 }
