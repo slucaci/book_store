@@ -76,6 +76,10 @@ body {
   z-index: -1;
 }
 
+.card-img-wh {
+  width: 50%;
+}
+
 @media (min-width: 1200px) {
   .container {
     max-width: 90%;
@@ -93,5 +97,14 @@ body {
 
   .header-container {
     padding-top: 200px;
+  }
+}
+
+@media (max-width: 991) {
+  .header-container {
+    padding-top: 116px;
+  }
+  body {
+    height: calc(100vh - 116px);
   }
 }
