@@ -1,0 +1,52 @@
+[
+  {
+    "pk": 1,
+    "model": "products.category",
+    "fields": { "name": "fiction", "friendly_name": "Fiction" }
+  },
+  {
+    "pk": 2,
+    "model": "products.category",
+    "fields": { "name": "non_fiction", "friendly_name": "Non-Fiction" }
+  },
+  {
+    "pk": 3,
+    "model": "products.category",
+    "fields": { "name": "mystery", "friendly_name": "Mystery" }
+  },
+  {
+    "pk": 4,
+    "model": "products.category",
+    "fields": { "name": "biography", "friendly_name": "Biography" }
+  },
+  {
+    "pk": 5,
+    "model": "products.category",
+    "fields": { "name": "fantasy", "friendly_name": "Fantasy" }
+  },
+  {
+    "pk": 6,
+    "model": "products.category",
+    "fields": { "name": "science_fiction", "friendly_name": "Science Fiction" }
+  },
+  {
+    "pk": 7,
+    "model": "products.category",
+    "fields": { "name": "romance", "friendly_name": "Romance" }
+  },
+  {
+    "pk": 8,
+    "model": "products.category",
+    "fields": { "name": "thriller", "friendly_name": "Thriller" }
+  },
+  {
+    "pk": 9,
+    "model": "products.category",
+    "fields": { "name": "self_help", "friendly_name": "Self-Help" }
+  },
+  {
+    "pk": 10,
+    "model": "products.category",
+    "fields": { "name": "history", "friendly_name": "History" }
+  }
+]

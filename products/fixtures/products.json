@@ -1,0 +1,86 @@
+[
+  {
+    "pk": 1,
+    "model": "products.product",
+    "fields": {
+      "sku": "bk1001",
+      "name": "The Great Gatsby",
+      "description": "A classic novel by F. Scott Fitzgerald exploring themes of wealth, love, and the American Dream.",
+      "price": 10.99,
+      "category": 1,
+      "rating": 4.7,
+      "image_url": "https://images-na.ssl-images-amazon.com/images/I/71UypkUjStL.jpg",
+      "image": "the_great_gatsby.jpg"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.product",
+    "fields": {
+      "sku": "bk1004",
+      "name": "Sapiens: A Brief History of Humankind",
+      "description": "Yuval Noah Harari's fascinating look at the history and future of the human species.",
+      "price": 18.99,
+      "category": 4,
+      "rating": 4.6,
+      "image_url": "https://images-na.ssl-images-amazon.com/images/I/81gTwYAhU7L.jpg",
+      "image": "sapiens.jpg"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.product",
+    "fields": {
+      "sku": "bk1005",
+      "name": "Becoming",
+      "description": "Michelle Obama's inspiring memoir about her journey through life and the White House.",
+      "price": 16.99,
+      "category": 5,
+      "rating": 4.9,
+      "image_url": "https://images-na.ssl-images-amazon.com/images/I/81h2gWPTYJL.jpg",
+      "image": "becoming.jpg"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "products.product",
+    "fields": {
+      "sku": "bk1006",
+      "name": "Harry Potter and the Philosopher's Stone",
+      "description": "J.K. Rowling's magical adventure about a boy discovering his wizarding heritage.",
+      "price": 8.99,
+      "category": 6,
+      "rating": 4.8,
+      "image_url": "https://images-na.ssl-images-amazon.com/images/I/81YOuOGFCJL.jpg",
+      "image": "harry_potter.jpg"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "products.product",
+    "fields": {
+      "sku": "bk1008",
+      "name": "The Silent Patient",
+      "description": "A psychological thriller by Alex Michaelides about a woman's silence and a therapist's obsession.",
+      "price": 11.99,
+      "category": 8,
+      "rating": 4.6,
+      "image_url": "https://images-na.ssl-images-amazon.com/images/I/91uwocAMtSL.jpg",
+      "image": "the_silent_patient.jpg"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "products.product",
+    "fields": {
+      "sku": "bk1009",
+      "name": "Atomic Habits",
+      "description": "James Clear's practical guide to building good habits and breaking bad ones.",
+      "price": 19.99,
+      "category": 9,
+      "rating": 4.9,
+      "image_url": "https://images-na.ssl-images-amazon.com/images/I/81bGKUa1e0L.jpg",
+      "image": "atomic_habits.jpg"
+    }
+  }
+]
