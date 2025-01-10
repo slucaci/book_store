@@ -21,19 +21,29 @@
     <li class="nav-item dropdown">
       <a
         class="logo-font font-weight-bold nav-link text-black"
-        href="#"
+        href="{% url 'products'%}?category=deals"
         id="specials-link"
         data-toggle="dropdown"
         aria-haspopup="true"
         aria-expanded="false"
       >
-        Special Offers
+        Special Books
       </a>
       <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-        <a href="" class="dropdown-item">New Books</a>
-        <a href="" class="dropdown-item">Deals</a>
+        <a href="{% url 'products'%}?category=new_books" class="dropdown-item"
+          >New Books</a
+        >
+        <a href="{% url 'products'%}?category=deals" class="dropdown-item"
+          >Deals</a
+        >
+        <a
+          href="{% url 'products'%}?category=most_recommended"
+          class="dropdown-item"
+          >Most recommended</a
+        >
       </div>
     </li>
+
     <li>
       <a
         class="logo-font font-weight-bold nav-link text-black"

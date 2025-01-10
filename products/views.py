@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product
+from .models import Product, Category
+
 
 
 
@@ -12,6 +13,13 @@ def all_products(request):
 
     products = Product.objects.all()
     query = None
+    categories = None
+    total_books = 0
+    if 'category' in request.GET:
+        categories = request.GET['category'].split(',')
+        products = products.filter(category__name__in=categories)
+        categories = Category.objects.filter(name__in=categories)
+        total_books = products.count()
 
     if request.GET:
         if 'q' in request.GET:
@@ -27,6 +35,8 @@ def all_products(request):
     context = {
         'products': products,
         'search_term': query,
+        'current_categories': categories,
+        'total_books': total_books,
     }
 
 

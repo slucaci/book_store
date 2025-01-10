@@ -2,51 +2,60 @@
   {
     "pk": 1,
     "model": "products.category",
-    "fields": { "name": "fiction", "friendly_name": "Fiction" }
+    "fields": { "name": "new_books", "friendly_name": "New Books" }
   },
   {
     "pk": 2,
     "model": "products.category",
-    "fields": { "name": "non_fiction", "friendly_name": "Non-Fiction" }
+    "fields": { "name": "deals", "friendly_name": "Deals" }
   },
   {
     "pk": 3,
     "model": "products.category",
-    "fields": { "name": "mystery", "friendly_name": "Mystery" }
+    "fields": {
+      "name": "most_recommended",
+      "friendly_name": "Most Recommended"
+    }
   },
   {
     "pk": 4,
     "model": "products.category",
-    "fields": { "name": "biography", "friendly_name": "Biography" }
+    "fields": { "name": "new_books", "friendly_name": "New Books" }
   },
   {
     "pk": 5,
     "model": "products.category",
-    "fields": { "name": "fantasy", "friendly_name": "Fantasy" }
+    "fields": { "name": "deals", "friendly_name": "Deals" }
   },
   {
     "pk": 6,
     "model": "products.category",
-    "fields": { "name": "science_fiction", "friendly_name": "Science Fiction" }
+    "fields": {
+      "name": "most_recommended",
+      "friendly_name": "Most Recommended"
+    }
   },
   {
     "pk": 7,
     "model": "products.category",
-    "fields": { "name": "romance", "friendly_name": "Romance" }
+    "fields": { "name": "new_books", "friendly_name": "New Books" }
   },
   {
     "pk": 8,
     "model": "products.category",
-    "fields": { "name": "thriller", "friendly_name": "Thriller" }
+    "fields": { "name": "deals", "friendly_name": "Deals" }
   },
   {
     "pk": 9,
     "model": "products.category",
-    "fields": { "name": "self_help", "friendly_name": "Self-Help" }
+    "fields": {
+      "name": "most_recommended",
+      "friendly_name": "Most Recommended"
+    }
   },
   {
     "pk": 10,
     "model": "products.category",
-    "fields": { "name": "history", "friendly_name": "History" }
+    "fields": { "name": "new_books", "friendly_name": "New Books" }
   }
 ]
