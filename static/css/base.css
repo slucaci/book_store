@@ -3,10 +3,9 @@ html {
 }
 
 body {
-  background: url("/media/background.webp") no-repeat center center fixed;
-  background-size: cover;
+  background: url("/media/background.webp") no-repeat center center fixed !important;
+  background-size: cover !important;
   height: calc(100vh - 164px);
-  color: #2c3e50;
   font-family: "Poppins", sans-serif;
 }
 
@@ -23,7 +22,6 @@ body {
   text-transform: uppercase;
   font-size: 2rem;
   font-weight: bold;
-  color: #2c3e50;
 }
 
 .main-logo-link {
@@ -59,7 +57,7 @@ body {
 }
 
 .border-black {
-  border: 1px solid #e74c3c !important;
+  border: 1px solid #212529 !important;
 }
 
 .bg-black {
@@ -72,7 +70,7 @@ body {
   top: 0;
   left: 0;
   position: fixed;
-  background: rgba(44, 62, 80, 0.7);
+  background: white;
   z-index: -1;
 }
 
@@ -80,9 +78,14 @@ body {
   width: 50%;
 }
 
+a.category-badge > span.badge:hover {
+  background: #212529 !important;
+  color: #fff !important;
+}
+
 @media (min-width: 1200px) {
   .container {
-    max-width: 90%;
+    max-width: 80%;
   }
 }
 
@@ -96,7 +99,7 @@ body {
   }
 
   .header-container {
-    padding-top: 200px;
+    padding-top: 164px;
   }
 }
 

@@ -34,28 +34,5 @@
       "name": "most_recommended",
       "friendly_name": "Most Recommended"
     }
-  },
-  {
-    "pk": 7,
-    "model": "products.category",
-    "fields": { "name": "new_books", "friendly_name": "New Books" }
-  },
-  {
-    "pk": 8,
-    "model": "products.category",
-    "fields": { "name": "deals", "friendly_name": "Deals" }
-  },
-  {
-    "pk": 9,
-    "model": "products.category",
-    "fields": {
-      "name": "most_recommended",
-      "friendly_name": "Most Recommended"
-    }
-  },
-  {
-    "pk": 10,
-    "model": "products.category",
-    "fields": { "name": "new_books", "friendly_name": "New Books" }
   }
 ]
