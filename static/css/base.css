@@ -61,7 +61,7 @@ body {
 }
 
 .bg-black {
-  background: #ecf0f1 !important;
+  background: black !important;
 }
 
 .overlay {
@@ -81,6 +81,17 @@ body {
 a.category-badge > span.badge:hover {
   background: #212529 !important;
   color: #fff !important;
+}
+.btt-button {
+  height: 42px;
+  width: 42px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+.btt-link {
+  cursor: pointer !important;
 }
 
 @media (min-width: 1200px) {
