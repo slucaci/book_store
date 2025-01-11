@@ -1,9 +1,11 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 
 from .models import UserProfile
 from .forms import UserProfileForm
 from checkout.models import Order
+from products.models import Product
+from products.forms import ProductForm
 
 def profile(request):
     """ Display the user's profile. """
@@ -46,3 +48,4 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
+
