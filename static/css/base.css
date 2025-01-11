@@ -90,6 +90,10 @@ body {
   width: 50%;
 }
 
+.wh-image-bag {
+  width: 50%;
+}
+
 a.category-badge > span.badge:hover {
   background: #212529 !important;
   color: #fff !important;
