@@ -29,7 +29,7 @@ body {
 }
 
 .shop-now-button {
-  background: #e74c3c;
+  background: #3498db;
   color: white;
   min-width: 260px;
   border-radius: 5px;
@@ -37,20 +37,21 @@ body {
 }
 
 .btn-black {
-  background: #e74c3c;
+  background: #3498db;
   color: white;
   border-radius: 5px;
 }
+
 .btn-outline-black {
   background: white;
-  color: black !important;
-  border: 1px solid black;
+  color: #2980b9 !important;
+  border: 1px solid #2980b9;
 }
 
 .btn-outline-black:hover,
 .btn-outline-black:active,
 .btn-outline-black:focus {
-  background: black;
+  background: #2980b9;
   color: white !important;
 }
 
@@ -60,20 +61,20 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-  background: #c0392b;
+  background: #1f618d;
   color: white;
 }
 
 .text-black {
-  color: #34495e !important;
+  color: #2c3e50 !important;
 }
 
 .border-black {
-  border: 1px solid #212529 !important;
+  border: 1px solid #2c3e50 !important;
 }
 
 .bg-black {
-  background: black !important;
+  background: #2c3e50 !important;
 }
 
 .overlay {
@@ -82,7 +83,7 @@ body {
   top: 0;
   left: 0;
   position: fixed;
-  background: white;
+  background: #ecf0f1;
   z-index: -1;
 }
 
@@ -95,9 +96,10 @@ body {
 }
 
 a.category-badge > span.badge:hover {
-  background: #212529 !important;
+  background: #2c3e50 !important;
   color: #fff !important;
 }
+
 .btt-button {
   height: 42px;
   width: 42px;
@@ -106,7 +108,9 @@ a.category-badge > span.badge:hover {
   right: 10px;
 }
 
-.btt-link {
+.btt-link,
+.update-link,
+.remove-item {
   cursor: pointer !important;
 }
 
@@ -130,10 +134,11 @@ a.category-badge > span.badge:hover {
   }
 }
 
-@media (max-width: 991) {
+@media (max-width: 991px) {
   .header-container {
     padding-top: 116px;
   }
+
   body {
     height: calc(100vh - 116px);
   }
