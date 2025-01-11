@@ -101,16 +101,17 @@
           </legend>
           {{ order_form.phone_number | as_crispy_field }}
           <!--  -->
-          {{ order_form.country | as_crispy_field }}
-          <!--  -->
-          {{ order_form.postcode | as_crispy_field }}
-          <!--  -->
-          {{ order_form.town_or_city | as_crispy_field }}
-          <!--  -->
           {{ order_form.street_address1 | as_crispy_field }}
           <!--  -->
           {{ order_form.street_address2 | as_crispy_field }}
           <!--  -->
+          {{ order_form.town_or_city | as_crispy_field }}
+          <!--  -->
+          {{ order_form.country | as_crispy_field }}
+          <!--  -->
+          {{ order_form.postcode | as_crispy_field }}
+          <!--  -->
+
           {{ order_form.county | as_crispy_field }}
           <div class="form-check form-check-inline float-right mr-0">
             {% if user.is_authenticated %}
@@ -145,6 +146,11 @@
 
           <!-- Used to display form errors -->
           <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+          <input
+            type="hidden"
+            value=" {{client_secret}}"
+            name="client_secret"
+          />
         </fieldset>
 
         <div class="submit-button text-right mt-5 mb-2">
