@@ -172,5 +172,13 @@ STATICFILES_DIRS= (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+
+
+
+# Stripe elements
+
 FREE_DELIVERY_THRESHOLD = 30
 STANDARD_DELIVERY_PERCENTAGE = 10
+STRIPE_CURRENCY = 'usd'
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', 'pk_test_51QfQWgKlTYMwRyTyns3xzlqBA4zgchO6RVqvK0idvzNmIIsp4mZHAIj3JAZuozlVR7nnWUXKKt6NMqsDyY4em3Mg00Uw9jREYk')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', 'sk_test_51QfQWgKlTYMwRyTyfShP6CQa5CHEhMVbxSYxJ5guX2CngZHhUMpBhmX3z1i719HZuafeEkw4UejqR4ybwhVwxfzC00exEDSYT7')
