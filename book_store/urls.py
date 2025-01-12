@@ -28,6 +28,7 @@ urlpatterns = [
     path('checkout/', include('checkout.urls')),
     path('profile/', include('profiles.urls')),
     path('contact/', include('contact.urls')),
+    path('', include('instagram_feed.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'book_store.views.handler404'
