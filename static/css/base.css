@@ -5,7 +5,7 @@ html {
 body {
   background: url("/media/background.webp") no-repeat center center fixed !important;
   background-size: cover !important;
-  height: calc(100vh - 164px);
+  height: calc(80vh - 164px);
   font-family: "Poppins", sans-serif;
 }
 
