@@ -1,38 +1,44 @@
 {% extends "base.html" %} {% load static %} {% block page_header %}
-<div class="container header-container">
-  <div class="row">
-    <div class="col"></div>
+<!-- Header Section -->
+<section id="header-section" class="header-container py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1 class="text-center text-black logo-font">
+          Welcome to Our Book Store
+        </h1>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 {% endblock %} {% block content %}
-<div class="container h-100">
+<section id="main-content" class="container h-100 py-5">
   <div class="row h-100">
     <div class="col-7 col-md-6 my-auto">
-      <h1 class="display-4 logo-font text-black">Show the new books below!</h1>
+      <h1 class="display-4 logo-font text-black">Buy the Latest Books!</h1>
       <div class="my-5">
         <h4>
           <a
-            href="{% url 'products'%}"
+            href="{% url 'products' %}"
             class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3"
-            >Shop Now</a
           >
+            Shop Now
+          </a>
         </h4>
       </div>
     </div>
   </div>
-</div>
-<div class="container">
-  <!-- Other content of your homepage -->
-  <div class="newsletter-section mt-5">
+</section>
+
+<section id="newsletter-section" class="bg-light py-5">
+  <div class="container">
     <h2 class="text-center">Subscribe to Our Newsletter</h2>
     <p class="text-center">Get the latest updates on books, deals, and more!</p>
-
-    <!-- Mailchimp Signup Form -->
     <div id="mc_embed_shell">
       <link
         href="//cdn-images.mailchimp.com/embedcode/classic-061523.css"
         rel="stylesheet"
-        type=""
+        type="text/css"
       />
       <div id="mc_embed_signup">
         <form
@@ -44,10 +50,6 @@
           target="_blank"
         >
           <div id="mc_embed_signup_scroll">
-            <h3>Subscribe</h3>
-            <div class="indicates-required">
-              <span class="asterisk">*</span> indicates required
-            </div>
             <div class="mc-field-group">
               <label for="mce-EMAIL"
                 >Email Address <span class="asterisk">*</span></label
@@ -103,5 +105,5 @@
       </script>
     </div>
   </div>
-</div>
+</section>
 {% endblock %}
