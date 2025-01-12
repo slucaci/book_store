@@ -1,6 +1,4 @@
-from django.urls import path
-from . import views
+from django.shortcuts import render
 
-urlpatterns = [
-    path('about/', views.about, name='about'),
-]
+def about(request):
+    return render(request, 'about.html')
