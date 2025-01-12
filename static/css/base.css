@@ -95,6 +95,18 @@ body {
   width: 50%;
 }
 
+#mc_embed_signup {
+  background: #fff;
+  clear: left;
+  font: 14px Helvetica, Arial, sans-serif;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 a.category-badge > span.badge:hover {
   background: #2c3e50 !important;
   color: #fff !important;
