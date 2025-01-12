@@ -6,7 +6,9 @@ def contact(request):
     if request.method == "POST":
         name = request.POST.get("name")
         email = request.POST.get("email")
+        subject = request.POST.get("subject")
         message = request.POST.get("message")
+        
      
         if not name or not email or not message:
             messages.error(request, "All fields are required.")

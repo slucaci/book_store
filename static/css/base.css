@@ -180,6 +180,27 @@ a.category-badge > span.badge:hover {
   color: #007bff;
 }
 
+/* Review CSS */
+.card {
+  border-radius: 10px;
+  background: #f9f9f9; /* Light gray background */
+  border: 1px solid #e0e0e0;
+}
+
+.card h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+
+textarea::placeholder {
+  font-style: italic;
+  color: #999;
+}
+
+button:hover {
+  background-color: #004085; /* Darker blue for hover */
+}
+
 /* Convenience classes - colors copied from Bootstrap */
 .arrow-primary {
   border-bottom-color: #007bff !important;

@@ -132,7 +132,49 @@
       </div>
     </div>
   </div>
+  {% if user.is_authenticated %}
+  <div class="col-md-12">
+    <div class="card shadow-sm p-4 mb-4">
+      <h3 class="mb-4 text-primary">Write a Review About This Book!</h3>
+      <form method="POST" action="{% url 'add_review' product.id %}">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="rating" class="form-label">Rating for this book:</label>
+          <select name="rating" id="rating" class="form-select" required>
+            <option value="" disabled selected>Choose...</option>
+            <option value="5">5 - Excellent</option>
+            <option value="4">4 - Very Good</option>
+            <option value="3">3 - Good</option>
+            <option value="2">2 - Fair</option>
+            <option value="1">1 - Poor</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="comment" class="form-label">Comment (optional):</label>
+          <textarea
+            name="comment"
+            id="comment"
+            rows="4"
+            class="form-control"
+            placeholder="Share your thoughts about this book..."
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Submit Review</button>
+      </form>
+    </div>
+  </div>
+  
+      <button class="btn btn-outline-black rounded-0 mt-5" type="submit">
+        Submit Review
+      </button>
+    </form>
+  </div>
+
+  {% else %}
+  <p><a href="{% url 'account_login' %}">Login</a> to write a review.</p>
+  {% endif %}
 </div>
+
 {% endblock %} {% block postloadjs %} {{ block.super }}
 <!--  -->
 {% include 'products/includes/quantity_input_script.html' %} {% endblock %}
