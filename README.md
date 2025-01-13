@@ -118,6 +118,22 @@ Book Store is an e-commerce platform designed to offer a seamless and enjoyable 
 
 ---
 
+## Social Media Presence
+
+As part of the project requirements to demonstrate a digital marketing strategy, the following social media profiles have been created to represent the e-commerce business:
+
+1. **Facebook Business Page**  
+   A real Facebook business page has been created for the bookstore to engage with customers and promote books..
+   **Link to the Facebook page:** [Bookstore Facebook Page](https://www.facebook.com/profile.php?id=61571887019703)
+
+2. **Instagram Profile**  
+   An Instagram profile has also been created to engage with customers and promote books.
+   **Link to the Instagram profile:** [Bookstore Instagram](https://instagram.com/bookstoreirl)
+
+These profiles will help build an online presence, reach a wider audience, and connect with potential customers through social media marketing strategies. They demonstrate the integration of a realistic digital marketing component in the overall e-commerce business model.
+
+---
+
 ## CRUD Functionality
 
 ### Create
