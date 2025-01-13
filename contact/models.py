@@ -4,6 +4,7 @@ from django.db import models
 
 
 class ContactMessage(models.Model):
+    """ A model to define the contact message details """
     name = models.CharField(max_length=255)
     email = models.EmailField()
     subject = models.CharField(max_length=255)
