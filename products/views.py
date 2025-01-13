@@ -59,16 +59,18 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
-    """ A view to show individual product details """
-
     product = get_object_or_404(Product, pk=product_id)
+    reviews = product.reviews.all()  
+
+    for review in reviews:
+        review.full_stars = range(review.rating)
+        review.empty_stars = range(5 - review.rating)
 
     context = {
         'product': product,
+        'reviews': reviews,
     }
-
     return render(request, 'products/product_detail.html', context)
-
 
 @login_required
 def add_product(request):
@@ -132,5 +134,6 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
 
 

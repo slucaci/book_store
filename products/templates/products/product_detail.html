@@ -132,6 +132,32 @@
       </div>
     </div>
   </div>
+  <div class="col-md-12">
+    {% if reviews %}
+    <h3>Customer Reviews</h3>
+    {% for review in reviews %}
+    <div class="mb-4">
+      <p><strong>{{ review.user.username }}</strong></p>
+      <p class="mb-1">
+        {% for i in review.full_stars %}
+        <i class="fas fa-star text-warning"></i>
+        {% endfor %} {% for i in review.empty_stars %}
+        <i class="fas fa-star text-muted"></i>
+        {% endfor %}
+      </p>
+      {% if review.comment %}
+      <p>{{ review.comment }}</p>
+      {% else %}
+      <p><em>No comment provided.</em></p>
+      {% endif %}
+
+      <hr />
+    </div>
+    {% endfor %} {% else %}
+    <p>No reviews yet. Be the first to leave a review!</p>
+    {% endif %}
+  </div>
+
   {% if user.is_authenticated %}
   <div class="col-md-12">
     <div class="card shadow-sm p-4 mb-4">
