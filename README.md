@@ -92,7 +92,7 @@ Book Store is an e-commerce platform designed to offer a seamless and enjoyable 
 
 ### Product Detail
 
-- Each product detail page provides comprehensive information about the book, including its description, price.
+- Each product detail page provides comprehensive information about the book, including it's description, price.
 - **User Features**:
   - Users can rate books, leaving feedback and ratings to help others make informed decisions.
   - Users can add products to their cart for purchase.
@@ -126,12 +126,14 @@ Book Store is an e-commerce platform designed to offer a seamless and enjoyable 
 - Users can create accounts to manage their orders
 - Readers have the ability to leave ratings for books, allowing their preferences and feedback to be captured. Administrators can review these ratings in the admin panel to gain insights into which books resonate most with the audience
 - Users can submit messages through the platform, and administrators can view and manage these messages directly in the admin panel for effective communication and feedback handling
+- Users can create reviews
 
 ### Read
 
 - Users can view books, their descriptions, and ratings
 - Order details and user history are accessible to authenticated users
 - Admins can read messages from users through admin panel
+- Users can read ratings from other users
 
 ### Update
 
