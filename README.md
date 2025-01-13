@@ -385,6 +385,10 @@ To clone the repository:
 - [Sitemap Generator](https://www.xml-sitemaps.com): Created the sitemap.xml to improve SEO and site navigation.
 - [Mailchimp](https://mailchimp.com/?currency=EUR): Integrated for managing newsletters and email subscriptions.
 
+## Testing
+
+Check the [TESTING.md](TESTING.md) file for a detailed summary of all testing procedures conducted.
+
 ## Credits
 
 - **Code Institute**: This project was inspired by tutorials and resources provided by Code Institute, which laid the foundation for understanding e-commerce functionality in Django
