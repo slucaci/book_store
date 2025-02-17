@@ -116,6 +116,27 @@
                 </span>
                 <span class="text-uppercase">Keep Shopping</span>
               </a>
+              {% if user.is_authenticated %}
+              <!--  -->
+              {% if in_wishlist %}
+              <a
+                href="{% url 'remove_from_wishlist' product.id %}"
+                class="btn btn-danger rounded-0 mt-5"
+                >Remove from Wishlist</a
+              >
+              {% else %}
+              <a
+                href="{% url 'add_to_wishlist' product.id %}"
+                class="btn btn-primary rounded-0 mt-5"
+                >Add to Wishlist</a
+              >
+              {% endif %} {% else %}
+              <p>
+                <a href="{% url 'account_login' %}">Log in</a> to add items to
+                your wishlist.
+              </p>
+              {% endif %}
+
               <input
                 type="submit"
                 class="btn btn-black rounded-0 text-uppercase mt-5"

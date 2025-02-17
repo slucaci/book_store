@@ -5,6 +5,7 @@ from django.db.models import Q
 from .models import Product, Category
 from .forms import ProductForm
 from django.contrib.auth.decorators import login_required
+from profiles.models import Wishlist
 
 # Create your views here.
 
@@ -54,12 +55,14 @@ def product_detail(request, product_id):
     """ A view to show individual product reviews """
     product = get_object_or_404(Product, pk=product_id)
     reviews = product.reviews.all()  
+    wishlist_items = Wishlist.objects.filter(user=request.user, product=product).exists() if request.user.is_authenticated else False
     for review in reviews:
         review.full_stars = range(review.rating)
         review.empty_stars = range(5 - review.rating)
     context = {
         'product': product,
         'reviews': reviews,
+        'in_wishlist': wishlist_items
     }
     return render(request, 'products/product_detail.html', context)
 
@@ -79,7 +82,7 @@ def add_product(request):
             messages.error(request, 'Failed to add product. Please ensure the form is valid.')
     else:
         form = ProductForm()
-        
+
     template = 'products/add_product.html'
     context = {
         'form': form,
@@ -105,13 +108,11 @@ def edit_product(request, product_id):
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
-
     template = 'products/edit_product.html'
     context = {
         'form': form,
         'product': product,
     }
-
     return render(request, template, context)
 
 
@@ -127,4 +128,26 @@ def delete_product(request, product_id):
     return redirect(reverse('products'))
 
 
+@login_required
+def add_to_wishlist(request, product_id):
+    """Add a product to the user's wishlist."""
+    product = get_object_or_404(Product, id=product_id)
+    wishlist_item, created = Wishlist.objects.get_or_create(user=request.user, product=product)
+    if created:
+        messages.success(request, f"{product.name} added to your wishlist!")
+    else:
+        messages.info(request, f"{product.name} is already in your wishlist.")
+    return redirect('product_detail', product_id=product.id)
 
+
+@login_required
+def remove_from_wishlist(request, product_id):
+    """Remove a product from the user's wishlist."""
+    product = get_object_or_404(Product, id=product_id)
+    wishlist_item = Wishlist.objects.filter(user=request.user, product=product)
+    if wishlist_item.exists():
+        wishlist_item.delete()
+        messages.success(request, f"{product.name} removed from your wishlist!")
+    else:
+        messages.error(request, f"{product.name} is not in your wishlist.")
+    return redirect('product_detail', product_id=product.id)
