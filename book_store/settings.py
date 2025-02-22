@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'ygf+nxf7tum-bkk%&gs$5*)ju31!c6e7^(0iw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['book-store-sergiu-b66daa257f03.herokuapp.com', 'localhost','127.0.0.1']
+ALLOWED_HOSTS = ['book-store-d7e28656e998.herokuapp.com', 'localhost','127.0.0.1']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
