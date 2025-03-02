@@ -3,7 +3,8 @@ html {
 }
 
 body {
-  background: url("/media/background.webp") no-repeat center center !important;
+  background: url("https://res.cloudinary.com/dirnzx6t4/image/upload/v1740907471/ytbjmbmx1zld2o2fn0nz.webp")
+    no-repeat center center !important;
   background-size: cover !important;
   height: calc(100vh - 164px);
   font-family: "Poppins", sans-serif;
