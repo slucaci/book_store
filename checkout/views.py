@@ -143,8 +143,7 @@ def checkout_success(request, order_number):
                 user_profile_form.save()
 
     messages.success(request, f'Order successfully processed! \
-        Your order number is {order_number}. 
-        You earned {points_earned} loyalty points!')
+        Your order number is {order_number}. You earned {points_earned} loyalty points!')
 
     if 'bag' in request.session:
         del request.session['bag']
