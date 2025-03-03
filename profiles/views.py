@@ -6,11 +6,13 @@ from .forms import UserProfileForm
 from checkout.models import Order
 from products.models import Product
 from products.forms import ProductForm
+from .models import LoyaltyPoints
 
 @login_required
 def profile(request):
     """ Display the user's profile. """
     profile = get_object_or_404(UserProfile, user=request.user)
+    loyalty_points, created = LoyaltyPoints.objects.get_or_create(user=request.user)
 
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
@@ -27,6 +29,7 @@ def profile(request):
     template = 'profiles/profile.html'
     context = {
         'form': form,
+        'loyalty_points': loyalty_points.points,
         'orders': orders,
         'on_profile_page': True
     }

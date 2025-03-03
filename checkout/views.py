@@ -8,6 +8,7 @@ from products.models import Product
 from bag.contexts import bag_contents
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
+from profiles.models import LoyaltyPoints 
 
 import stripe
 
@@ -122,6 +123,11 @@ def checkout_success(request, order_number):
         order.user_profile = profile
         order.save()
 
+        points_earned = int(order.grand_total // 10)
+        loyalty_points, created = LoyaltyPoints.objects.get_or_create(user=request.user)
+        loyalty_points.points += points_earned
+        loyalty_points.save()
+
         if save_info:
             profile_data = {
                 'default_phone_number': order.phone_number,
@@ -137,8 +143,8 @@ def checkout_success(request, order_number):
                 user_profile_form.save()
 
     messages.success(request, f'Order successfully processed! \
-        Your order number is {order_number}. A confirmation \
-        email will be sent to {order.email}.')
+        Your order number is {order_number}. 
+        You earned {points_earned} loyalty points!')
 
     if 'bag' in request.session:
         del request.session['bag']
