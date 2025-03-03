@@ -83,6 +83,7 @@ def apply_loyalty_points(request):
             discount_amount = Decimal(points_to_apply)  
             request.session["loyalty_discount"] = float(discount_amount)
             user.loyalty_points.points -= points_to_apply
+            user.loyalty_points.save()
             messages.success(request, f"Applied {points_to_apply} points for a discount of ${discount_amount:.2f}")
         else:
             messages.error(request, "Not enough points!")

@@ -75,8 +75,8 @@ def checkout(request):
 
         current_bag = bag_contents(request)
         total = current_bag['grand_total']
-        if total < Decimal("0.50"):
-            messages.error(request, "The minimum order total must be at least $0.50.")
+        if total < Decimal("5.00"):
+            messages.error(request, "The minimum order total must be at least $5.00.")
             return redirect("view_bag")
         stripe_total = round(total * 100) 
         stripe.api_key = stripe_secret_key
