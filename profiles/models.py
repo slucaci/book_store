@@ -47,3 +47,16 @@ class Wishlist(models.Model):
 
     def __str__(self):
         return f"{self.user.username} - {self.product.name}"
+
+class LoyaltyPoints(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="loyalty_points")
+    points = models.IntegerField(default=0)
+    redeemed_points = models.IntegerField(default=0)
+    last_updated = models.DateTimeField(auto_now=True)
+
+    def available_points(self):
+        """ Calculate points available for use """
+        return self.points - self.redeemed_points
+
+    def __str__(self):
+        return f"{self.user.username} - {self.available_points()} points"
