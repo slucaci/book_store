@@ -2,6 +2,7 @@ from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
+from profiles.models import LoyaltyPoints
 
 def bag_contents(request):
 
@@ -9,6 +10,7 @@ def bag_contents(request):
     total = 0
     product_count = 0
     bag = request.session.get('bag', {})
+    loyalty_discount = Decimal(request.session.get('loyalty_discount', 0))
 
     for item_id, item_data in bag.items():
         if isinstance(item_data, int):
@@ -38,7 +40,13 @@ def bag_contents(request):
         delivery = 0
         free_delivery_delta = 0
     
-    grand_total = delivery + total
+    grand_total = total + delivery - loyalty_discount
+    grand_total = max(grand_total, 0)
+
+    user_points = 0
+    if request.user.is_authenticated:
+        loyalty_points, created = LoyaltyPoints.objects.get_or_create(user=request.user)
+        user_points = loyalty_points.points
     
     context = {
         'bag_items': bag_items,
@@ -48,6 +56,8 @@ def bag_contents(request):
         'free_delivery_delta': free_delivery_delta,
         'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
         'grand_total': grand_total,
+        'loyalty_discount': loyalty_discount,
+        'loyalty_points': user_points,
     }
 
     return context

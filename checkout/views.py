@@ -9,6 +9,7 @@ from bag.contexts import bag_contents
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from profiles.models import LoyaltyPoints 
+from decimal import Decimal
 
 import stripe
 
@@ -74,7 +75,7 @@ def checkout(request):
 
         current_bag = bag_contents(request)
         total = current_bag['grand_total']
-        stripe_total = round(total * 100)
+        stripe_total = round(total * 100) 
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
             amount=stripe_total,
@@ -117,7 +118,7 @@ def checkout_success(request, order_number):
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
-
+    points_earned = 0
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
         order.user_profile = profile
@@ -142,6 +143,13 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
+    print("Session before clearing:", request.session.items())
+
+    if "loyalty_discount" in request.session:
+        del request.session["loyalty_discount"]
+        request.session.modified = True
+
+    print("Session after clearing:", request.session.items())
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. You earned {points_earned} loyalty points!')
 

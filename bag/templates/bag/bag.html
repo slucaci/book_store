@@ -117,6 +117,27 @@
           {% endfor %}
           <tr>
             <td colspan="5" class="pt-5 text-right">
+              {% if request.user.is_authenticated %}
+              <h6>
+                Your Loyalty Points: <strong>{{ loyalty_points }}</strong>
+              </h6>
+
+              {% if loyalty_points > 0 %}
+              <form method="POST" action="{% url 'apply_loyalty_points' %}">
+                {% csrf_token %}
+                <input
+                  type="number"
+                  name="points_to_apply"
+                  min="0"
+                  max="{{ loyalty_points }}"
+                  required
+                  placeholder="Enter points to apply"
+                />
+                <button type="submit" class="btn btn-success btn-sm">
+                  Apply Points
+                </button>
+              </form>
+              {% endif %} {% endif %}
               <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
               <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
               <h4 class="mt-4">
