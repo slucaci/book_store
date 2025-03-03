@@ -75,6 +75,9 @@ def apply_loyalty_points(request):
         points_to_apply = int(request.POST.get("points_to_apply", 0))
         current_bag = bag_contents(request)
         grand_total = Decimal(current_bag["grand_total"])
+        if (grand_total - Decimal(points_to_apply)) < Decimal("5.00"):
+            messages.error(request, f"The minimum order total after applying loyalty points must be at least $5.00. You can apply a maximum of {int(grand_total - Decimal('5.00'))} points.")
+            return redirect("view_bag")
         if Decimal(points_to_apply) > grand_total:
             messages.error(request, "You cannot apply more points than the order total!")
             print(points_to_apply, grand_total)
@@ -83,7 +86,6 @@ def apply_loyalty_points(request):
             discount_amount = Decimal(points_to_apply)  
             request.session["loyalty_discount"] = float(discount_amount)
             user.loyalty_points.points -= points_to_apply
-            user.loyalty_points.save()
             messages.success(request, f"Applied {points_to_apply} points for a discount of ${discount_amount:.2f}")
         else:
             messages.error(request, "Not enough points!")
