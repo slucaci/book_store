@@ -179,44 +179,58 @@ These profiles will help build an online presence, reach a wider audience, and c
 
 ---
 
-## Database Models
+## Entity-Relationship Diagram (ERD)
 
-### 1. **User**
+The following Entity-Relationship Diagram (ERD) visually represents the database structure and the relationships between various entities within our e-commerce system. It acts as a foundational blueprint for our data model.
 
-- Stores user details like username, email, and password
+![ERD](static/readmeimg/erd.png)
 
-### 2. **UserProfile**
+### User
 
-- Extends the user model with default delivery information
-- Links to order history
+- Represents registered users of the e-commerce platform
+- Stores essential information like username, email, and authentication details
+- Used for authentication, authorization, and linking user-specific data such as profiles, orders, and loyalty points
 
-### 3. **Product**
+### UserProfile
 
-- Represents items available for purchase
-- Includes attributes like name, description, price, category, and images
+- Extends the User model to store additional details like address, country, and other profile-related information
+- Helps in managing personalized user data separately from authentication details
 
-### 4. **Category**
+### LoyaltyPoints
 
-- Organizes products into categories for sorting
+- Tracks loyalty points earned and redeemed by a user
+- Connected to UserProfile, allowing users to apply points for discounts on purchases
 
-### 5. **Order**
+### Order
 
-- Tracks customer details, delivery address, and total cost
+- Represents a user's purchase transaction
+- Stores details such as order status, shipping details, and timestamps
+- Connected to UserProfile to link orders to specific customers.
 
-### 6. **OrderLineItem**
+### OrderLineItem
 
-- Represents individual items within an order
-- Links a specific product to an order and tracks its quantity and subtotal
+- Represents individual products within an order
+- Linked to both Order and Product to specify which products were purchased.
 
-### 7. **Review**
+### Product
 
-- Allows users to leave ratingss on products
-- Each review is tied to a specific product and user
+- Stores information about items available
+- Connected to Category to classify products
 
-### 8. **ContactMessage**
+### Category
 
-- Handles questions submitted through the contact form
-- Includes fields like name, email, subject, and message content
+- Represents product categories
+- Helps organize products into relevant groups
+
+### Review
+
+- Allows users to submit feedback on purchased products
+- Connected to both User and Product to track which user reviewed which product
+
+### Wishlist
+
+- Enables users to save products for future reference
+- Connected to User and Product to track user-specific product preferences
 
 ---
 
@@ -257,6 +271,14 @@ The following Entity-Relationship Diagram (ERD) provides a visual representation
 
 - **One-to-Many Relationship**: A user can rate multiple books
 - **One-to-One Relationship**: Each rating is tied to a single user
+
+### User - Wishlist
+
+- **One-to-Many Relationship**:A User can have multiple Wishlist entries
+
+### User - Loyalty Points
+
+- **One-to-One Relationship**: A UserProfile is linked to a single LoyaltyPoints entry
 
 ### ContactMessage
 

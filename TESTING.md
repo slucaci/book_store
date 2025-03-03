@@ -6,6 +6,8 @@
 
 [HTML W3C](https://validator.w3.org/) was used to validate the HTML code.
 
+![HTML VALIDATOR IMAGE](/static/readmeimg/htmlvalidator.png)
+
 - [Home Page](https://book-store-49b1de6a7e87.herokuapp.com/) - 0 errors
 - [Offers](https://book-store-49b1de6a7e87.herokuapp.com/products/?category=most_recommended) - 0 errors
 - [About](https://book-store-49b1de6a7e87.herokuapp.com/about/) - 0 errors
@@ -112,6 +114,8 @@ I have used developer tools Lighthouse to test my website on mobile and desktop 
 2. Complete the checkout process by entering valid details and verify that the order is successfully placed.
 3. Ensure the order appears in the user's order history on the Profile page.
 4. Test the checkout process with invalid inputs to ensure validation errors are displayed.
+
+###
 
 ### Links Test:
 
