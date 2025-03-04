@@ -2,7 +2,7 @@
 
 Book Store is an e-commerce platform designed to offer a seamless and enjoyable experience for book lovers. Our mission is to connect readers with a wide range of books, from bestsellers to hidden gems, and provide a user-friendly platform for exploring, purchasing, and reviewing books
 
-### Visit the site deployed on Heroku: [Book-store](https://book-store-49b1de6a7e87.herokuapp.com/).
+### Visit the site deployed on Heroku: [Book-store](https://book-store-d7e28656e998.herokuapp.com/).
 
 ## Business Model
 
@@ -62,6 +62,7 @@ Book Store is an e-commerce platform designed to offer a seamless and enjoyable 
 
   - Write ratings for books
   - View my order history
+  - Add books to my wishlist
 
 - **As an admin user, I can:**
   - Add, edit, or remove books from the inventory
@@ -69,6 +70,7 @@ Book Store is an e-commerce platform designed to offer a seamless and enjoyable 
   - View analytics on sales and user interactions
   - View users ratings on books
   - Manage messages from users thru admin panel
+  - Manage users loyalty points
 
 ---
 
@@ -89,6 +91,8 @@ Book Store is an e-commerce platform designed to offer a seamless and enjoyable 
 
 - Seamless addition and removal of books in the cart.
 - Secure checkout process using Stripe.
+- Apply loyalty points to get a discount (each point equals $1)
+- Users earn 1 loyalty point for every $10 spent.
 
 ### Product Detail
 
@@ -114,6 +118,9 @@ Book Store is an e-commerce platform designed to offer a seamless and enjoyable 
 - **User Features**:
   - Update delivery information, including address, phone number, and other default settings for future orders.
   - View their order history with details of past purchases.
+  - View their wishlist items
+  - Remove items from wishlist
+  - View loyalty points
 - This feature ensures a personalized and seamless shopping experience, making it easy for users to manage their preferences and track their orders
 
 ---
@@ -143,6 +150,7 @@ These profiles will help build an online presence, reach a wider audience, and c
 - Readers have the ability to leave ratings for books, allowing their preferences and feedback to be captured. Administrators can review these ratings in the admin panel to gain insights into which books resonate most with the audience
 - Users can submit messages through the platform, and administrators can view and manage these messages directly in the admin panel for effective communication and feedback handling
 - Users can create reviews
+- User can add books to wishlist
 
 ### Read
 
@@ -150,18 +158,28 @@ These profiles will help build an online presence, reach a wider audience, and c
 - Order details and user history are accessible to authenticated users
 - Admins can read messages from users through admin panel
 - Users can read ratings from other users
+- Users can view wishlist
+- Users can view loyalty points
+- Admins can view loyalty points for each user
+- Admins can view wishlist books for each user
 
 ### Update
 
 - Admins can update book details, including price, description and image
 - Users can edit account information and update cart items.
 - Users can modify items in the chart
+- Users can update wishlist items
+- Users can update loyalty points spent at checkout
+- Admins can update loyalty points for each user
+- Admins can update wishlist book for each user
 
 ### Delete
 
 - Admins can remove unavailable books
 - Users can remove items from their bag
 - Admins can remove users
+- Admins can remove loyalty points
+- Admins can remove wishlist items
 
 ---
 

@@ -68,6 +68,32 @@ I have used developer tools Lighthouse to test my website on mobile and desktop 
 
 ![.](/static/readmeimg/sortbooks.png)
 
+#### As a Customer, I want to add books to my wishlist so that I can save them for future purchases
+
+![.](/static/readmeimg/addwishlist.png)
+
+#### As a registered user, I want to earn loyalty points for each purchase so that I can redeem them for discounts on future orders
+
+![.](/static/readmeimg/earnpoints.png)
+
+#### As a registered user, I want to view my current loyalty points balance so that I know how many points I have available
+
+![.](/static/readmeimg/viewpoints.png)
+
+#### As a registered user, I want to apply my loyalty points at checkout so that I can reduce my order total
+
+![.](/static/readmeimg/applypoints.png)
+
+####As a registered user, I want to receive a confirmation message when I successfully apply loyalty points so that I know they have been deducted.
+
+![.](/static/readmeimg/successpoints.png)
+
+#### As a registered user, I want to view my wishlist so that I can easily find the products I have saved
+
+#### As a registered user, I want to remove items from my wishlist so that I can manage my saved products effectively
+
+![.](/static/readmeimg/mywishlist.png)
+
 ## Manual Testing
 
 ### Navigation Test:
@@ -115,7 +141,30 @@ I have used developer tools Lighthouse to test my website on mobile and desktop 
 3. Ensure the order appears in the user's order history on the Profile page.
 4. Test the checkout process with invalid inputs to ensure validation errors are displayed.
 
-###
+### My Wishlist Test:
+
+1. Add a product to the wishlist and verify that it appears in the wishlist section
+2. Remove a product from the wishlist and ensure it no longer appears in the list
+3. Test the wishlist functionality on different devices and browsers to ensure compatibility
+4. Check that wishlist data remains intact after logging out and logging back in
+5. Ensure that the "Add to Wishlist" button is only visible for logged-in users
+6. Verify that wishlist items do not expire unless manually removed by the user
+
+### Loyality Points Test:
+
+1. Earning Points:
+
+   - Place an order and verify that the correct number of loyalty points are awarded based on the purchase amount( for each 10$, the user gets 1 point)
+   - Ensure that points are only credited after the order is successfully completed
+
+2. Redeeming Points:
+
+   - Apply loyalty points at checkout and verify that the discount is correctly calculated
+   - Ensure that the remaining balance after applying points meets the minimum order total requirement
+   - Test using more points than allowed and verify that an appropriate error message is displayed
+
+3. Points Balance:
+   - Verify that users can view their total loyalty points in their profile
 
 ### Links Test:
 
