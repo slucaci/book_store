@@ -29,7 +29,9 @@ def add_to_bag(request, item_id):
         quantity = int(quantity)
     except ValueError:
         quantity = 1 
-    redirect_url = request.POST.get('redirect_url')
+    redirect_url = request.POST.get('redirect_url', '/')
+    if not redirect_url:
+        redirect_url = '/' 
     print(f"Redirect URL: {redirect_url}")
     bag = request.session.get('bag', {})
     if item_id in list(bag.keys()):
