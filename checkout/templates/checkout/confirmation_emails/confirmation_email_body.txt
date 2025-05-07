@@ -1,0 +1,25 @@
+Order Info:
+Order Number
+{{ order.order_number }}
+
+Order Date
+{{ order.date }}
+
+Order Details:{% for item in order.orderlineitem_set.all %}
+    {{ item.product.name }} - {{ item.quantity }} @ ${{ item.product.price }} each
+{% endfor %}
+
+Delivering To:
+Full Name: {{ order.full_name }}
+Address 1: {{ order.street_address1 }}
+Address 2: {{ order.street_address2 }}
+County: {{ order.county }}
+Town or City: {{ order.town_or_city }}
+Postal Code: {{ order.postcode }}
+Country: {{ order.country }}
+Phone Number: {{ order.phone_number }}
+
+Billing Info
+Order Total: ${{ order.order_total }}
+Delivery: ${{ order.delivery_cost }}
+Grand Total: ${{ order.grand_total }}
