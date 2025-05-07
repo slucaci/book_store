@@ -28,14 +28,17 @@ def send_confirmation_email(order):
         print(subject)
         print(message)
         
-        send_mail(
+        try:
+            send_mail(
             subject,
             message,
             settings.DEFAULT_FROM_EMAIL,
             [order.email],
             fail_silently=False,
         )
-        print("test function send_confirmation_email()")
+            print("Email sent successfully")
+        except Exception as e:
+            print(f"Error sending email: {e}")
 
 
 def checkout(request):
