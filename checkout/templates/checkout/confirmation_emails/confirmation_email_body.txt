@@ -5,8 +5,9 @@ Order Number
 Order Date
 {{ order.date }}
 
-Order Details:{% for item in order.orderlineitem_set.all %}
-    {{ item.product.name }} - {{ item.quantity }} @ ${{ item.product.price }} each
+Order Details:
+{% for item in order.lineitems.all %}
+  <p>{{ item.product.name }} - {{ item.quantity }} @ ${{ item.product.price }} each</p>
 {% endfor %}
 
 Delivering To:
