@@ -209,7 +209,7 @@ STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 
-if 'DEVELOPMENT' in os.environ:
+if os.environ.get('DEVELOPMENT') == '1':
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'sergiulucaci03@gmail.com'
 

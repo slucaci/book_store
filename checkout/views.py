@@ -35,7 +35,6 @@ def send_confirmation_email(order):
             [order.email],
             fail_silently=False,
         )
-        print("test function send_confirmation_email()")
 
 
 def checkout(request):
