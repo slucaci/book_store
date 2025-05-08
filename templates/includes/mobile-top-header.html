@@ -65,6 +65,16 @@
       <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
       <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
       {% endif %}
+      <div class="text-right mb-1 mr-2">
+        {% if user.is_authenticated %}
+        <p class="dropdown-item text-muted mb-0">
+          Logged in as <strong>{{ user.username }}</strong>
+        </p>
+        {% else %}
+        <p class="dropdown-item mb-0">You are not logged in.</p>
+
+        {% endif %}
+      </div>
     </div>
   </li>
   <li class="list-inline-item">
