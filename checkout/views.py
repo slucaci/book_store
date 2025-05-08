@@ -14,7 +14,6 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 
 
-
 import stripe
 
 def send_confirmation_email(order):
@@ -25,14 +24,19 @@ def send_confirmation_email(order):
         message = render_to_string(
             'checkout/confirmation_emails/confirmation_email_body.txt',
             {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL}
-            )        
-        send_mail(
-        subject,
-        message,
-        settings.DEFAULT_FROM_EMAIL,
-        [order.email],
-        fail_silently=False,
-    )
+            )
+        
+        try:
+            send_mail(
+            subject,
+            message,
+            settings.DEFAULT_FROM_EMAIL,
+            [order.email],
+            fail_silently=False,
+        )
+            print("Email sent successfully")
+        except Exception as e:
+            print(f"Error sending email: {e}")
 
 
 def checkout(request):
