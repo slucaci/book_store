@@ -16,7 +16,7 @@ from django.template.loader import render_to_string
 
 import stripe
 
-def send_confirmation_email(order):
+def send_confirmation_email(request, order):
         """Send the user a confirmation email"""
         subject = render_to_string(
             'checkout/confirmation_emails/confirmation_email_subject.txt',
@@ -25,7 +25,6 @@ def send_confirmation_email(order):
             'checkout/confirmation_emails/confirmation_email_body.txt',
             {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL}
             )
-        
         try:
             send_mail(
             subject,
@@ -33,10 +32,10 @@ def send_confirmation_email(order):
             settings.DEFAULT_FROM_EMAIL,
             [order.email],
             fail_silently=False,
-        )
-            print("Email sent successfully")
+            )
+            messages.success(request, "Email sent successfully!")
         except Exception as e:
-            print(f"Error sending email: {e}")
+            messages.error(request, f"Error sending email: {e}")
 
 
 def checkout(request):
