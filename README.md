@@ -118,6 +118,7 @@ This project operates as a **B2C (Business-to-Consumer)** e-commerce platform. I
 - Secure checkout process using Stripe.
 - Apply loyalty points to get a discount (each point equals $1)
 - Users earn 1 loyalty point for every $10 spent.
+- After successful payment, users receive an order confirmation email with purchase [details](static/readmeimg/email_confirmation.png).
 
 ### Product Detail
 
