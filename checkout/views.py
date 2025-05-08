@@ -25,16 +25,17 @@ def send_confirmation_email(order):
             'checkout/confirmation_emails/confirmation_email_body.txt',
             {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL}
             )
-        try:
-            send_mail(
+        print(subject)
+        print(message)
+        
+        send_mail(
             subject,
             message,
             settings.DEFAULT_FROM_EMAIL,
             [order.email],
             fail_silently=False,
-            )
-        except Exception as e:
-            pass
+        )
+        print("test function send_confirmation_email()")
 
 
 def checkout(request):
