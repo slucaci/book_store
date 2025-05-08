@@ -48,6 +48,31 @@ Book Store is an e-commerce platform designed to offer a seamless and enjoyable 
 
 ---
 
+## E-commerce Model Overview
+
+### Business Type
+
+This project operates as a **B2C (Business-to-Consumer)** e-commerce platform. It is an online bookstore that sells physical books directly to customers through a user-friendly web interface
+
+### Target Audience
+
+- Casual readers and book enthusiasts
+- Users based primarily in Ireland and the UK who prefer shopping online for convenience
+
+### Business Goals
+
+- Provide an intuitive, secure platform for users to browse and purchase books
+- Increase customer retention through a **loyalty points system** (10% of the order value returned as points)
+- Encourage larger orders with **free delivery on orders over 30$**
+
+### Revenue Model
+
+- Direct book sales
+- Upselling via product recommendations
+- Retention through loyalty rewards and personalized profiles
+
+---
+
 ## User Experience (UX)
 
 ### User Stories
@@ -318,6 +343,12 @@ The following Entity-Relationship Diagram (ERD) provides a visual representation
 - CSS
 - JavaScript
 - Python
+
+---
+
+## Known Bugs
+
+- **False Broken Link Warning for Instagram**: Some link checkers may report the Instagram link as broken. However, the link has been manually tested and it correctly opens the business [Instagram page.](https://www.instagram.com/bookstoreirl)
 
 ---
 
