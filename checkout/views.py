@@ -26,16 +26,13 @@ def send_confirmation_email(order):
             'checkout/confirmation_emails/confirmation_email_body.txt',
             {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL}
             )        
-        try:
-            send_mail(
-            subject,
-            message,
-            settings.DEFAULT_FROM_EMAIL,
-            [order.email],
-            fail_silently=False,
-        )
-        except Exception as e:
-            pass
+        send_mail(
+        subject,
+        message,
+        settings.DEFAULT_FROM_EMAIL,
+        [order.email],
+        fail_silently=False,
+    )
 
 
 def checkout(request):
@@ -178,7 +175,7 @@ def checkout_success(request, order_number):
                 user_profile_form.save()
     send_confirmation_email(order)
     messages.success(request, f'Order successfully processed! \
-        Your order number is {order_number}. You earned {points_earned} loyalty points!')
+        Your order number is {order_number}. You earned {points_earned} loyalty points!  A confirmation email has been sent to {order.email}.')
 
     if 'bag' in request.session:
         del request.session['bag']
