@@ -7,7 +7,7 @@ Order Date
 
 Order Details:
 {% for item in order.lineitems.all %}
-  <p>{{ item.product.name }} - {{ item.quantity }} @ ${{ item.product.price }} each</p>
+{{ item.product.name }} - {{ item.quantity }} @ ${{ item.product.price }} each
 {% endfor %}
 
 Delivering To:

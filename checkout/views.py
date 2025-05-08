@@ -14,6 +14,7 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 
 
+
 import stripe
 
 def send_confirmation_email(order):
@@ -33,9 +34,8 @@ def send_confirmation_email(order):
             [order.email],
             fail_silently=False,
         )
-            messages.success(request, "Email sent successfully!")
         except Exception as e:
-            messages.error(request, f"Error sending email: {e}")
+            pass
 
 
 def checkout(request):
